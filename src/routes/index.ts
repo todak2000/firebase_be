@@ -7,6 +7,7 @@ const router = express.Router();
 
 
 router.get('/home', home);
+router.get('/', home);
 router.post('/users', createUser);
 // router.get('/product/:id', getProduct);
 // router.put('/update/:id', updateProduct);
