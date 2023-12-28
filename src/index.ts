@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import router from './src/routes';
-import config from './src/config';
+import router from './routes';
+import config from './config';
 
 export const app = express();
 

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from "../../../index_test";
+import { app } from "../../index_test";
 
 describe('GET /api/v1/home', () => {
   it('responds with a message', async () => {
