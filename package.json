@@ -4,6 +4,7 @@
   "repository": "https://github.com/todak2000/firebase_be.git",
   "author": "Daniel Olagunju <todak2000@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
