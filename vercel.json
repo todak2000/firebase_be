@@ -1,16 +1,12 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "./index.js",
-        "use": "@vercel/node"
-      }
+    "cleanUrls": true,
+    "buildCommand": "yarn jest && tsc",
+    "outputDirectory": "dist",
+    "redirects": [
+        { "source": "/", "destination": "/api/v1/home", "permanent": true }
     ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
+      "trailingSlash": false
+    
   }
   
