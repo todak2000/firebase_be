@@ -1,11 +1,19 @@
 {
     "version": 2,
     "cleanUrls": true,
-    "buildCommand": "tsc",
     "outputDirectory": "dist",
-    "redirects": [
-        { "source": "/", "destination": "/api/v1/home", "permanent": true }
+      "trailingSlash": false,
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
     ],
-      "trailingSlash": false
-    
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
   }
+  
