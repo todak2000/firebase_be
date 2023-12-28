@@ -1,7 +1,7 @@
 {
     "version": 2,
     "cleanUrls": true,
-    "buildCommand": "yarn jest && tsc",
+    "buildCommand": "tsc",
     "outputDirectory": "dist",
     "redirects": [
         { "source": "/", "destination": "/api/v1/home", "permanent": true }
@@ -9,4 +9,3 @@
       "trailingSlash": false
     
   }
-  
