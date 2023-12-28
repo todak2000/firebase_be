@@ -1,5 +1,5 @@
 import request from "supertest";
-import { app } from "../../index_test";
+import { app } from "../../../index_test";
 import { db } from "../../firebase"; // Import your Firebase config
 import { doc, deleteDoc } from "@firebase/firestore"; // Assuming you're using Firebase Firestore
 import { faker } from "@faker-js/faker";
