@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.ts",
   "scripts": {
-    "build": "jest && rimraf dist && tsc",
+    "build": "rimraf dist && tsc",
     "test": "jest",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
