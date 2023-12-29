@@ -1,14 +1,20 @@
-import express from 'express';
-import cors from 'cors';
-import router from './src/routes';
-import config from './src/config';
+import express, { Application } from "express";
+import morgan from "morgan";
+import cors from "cors";
+import router from "./src/routes";
+import config from "./src/config";
+import swagger from "./swagger";
 
-export const app = express();
+export const app: Application = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/api/v1', router);
+app.use(morgan("tiny"));
+app.use(express.static("public"));
+
+swagger(app);
+app.use("/", router);
 
 app.listen(config.port, () => {
-    console.log(`Server is live @ ${config.hostUrl}`)
+  console.log(`Server is live @ ${config.hostUrl}`);
 });
