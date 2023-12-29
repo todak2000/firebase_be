@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import assert from 'assert';
+import dotenv from "dotenv";
+import assert from "assert";
 
 dotenv.config();
 
@@ -15,8 +15,12 @@ const {
   APP_ID,
 } = process.env;
 
-assert(PORT, 'Port is required');
-assert(HOST, 'Host is required');
+assert(PORT, "Port is required");
+assert(HOST, "Host is required");
+
+const SwaggerVersion = "1.0.0";
+const SwaggerTitle = "Amazin Trips API documentation";
+const SwaggerDescription = "Amazin Trips API documentation";
 
 export default {
   port: PORT,
@@ -30,4 +34,7 @@ export default {
     messagingSenderId: MESSAGING_SENDER_ID,
     appId: APP_ID,
   },
+  SwaggerVersion,
+  SwaggerDescription,
+  SwaggerTitle,
 };

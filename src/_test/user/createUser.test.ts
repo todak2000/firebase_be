@@ -1,10 +1,11 @@
+jest.setTimeout(30000);
 import request from "supertest";
 import { app } from "../../../index_test";
-import { db } from "../../firebase"; // Import your Firebase config
-import { doc, deleteDoc } from "@firebase/firestore"; // Assuming you're using Firebase Firestore
+import { db } from "../../firebase";
+import { doc, deleteDoc } from "@firebase/firestore";
 import { faker } from "@faker-js/faker";
 
-describe("POST /api/v1/users", () => {
+describe("POST /api/v1/user", () => {
   it("creates a new user and responds with status 200 and a success message", async () => {
     const data = {
       id: faker.string.uuid(),
@@ -14,21 +15,15 @@ describe("POST /api/v1/users", () => {
       authType: "gmail",
       role: "traveler",
     };
-    const response = await request(app).post("/api/v1/users").send(data);
+    const response = await request(app).post("/api/v1/user").send(data);
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
       status: 200,
       message: "New user created successfully",
     });
-
     // Clean up: delete the user created for the test
-    const userDoc = doc(db, "users", data.id);
+    const userDoc = doc(db, "Users", data.id);
     await deleteDoc(userDoc);
-  });
-
-  it("responds with status 400 and an error message if user creation fails", async () => {
-    // Here you need to simulate a situation where user creation fails.
-    // This depends on your application logic.
   });
 
   // Add more tests for other edge cases, such as:
