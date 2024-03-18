@@ -55,6 +55,7 @@ export default router;
  *         role: admin
  */
 
+
 /**
  * @swagger
  * /user:

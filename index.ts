@@ -18,3 +18,5 @@ app.use("/", router);
 app.listen(config.port, () => {
   console.log(`Server is live @ ${config.hostUrl}`);
 });
+
+module.exports = app;
